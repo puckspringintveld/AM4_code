@@ -1,0 +1,10 @@
+# general rule for shifted vs truncated
+shifted
+# general rule tailcorrections
+no
+# number of defined interactions
+1
+# type interaction, parameters. 
+CH4_amm        lennard-jones    148.0     3.73
+# general mixing rule for Lennard-Jones
+Lorentz-Berthelot

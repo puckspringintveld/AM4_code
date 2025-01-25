@@ -1,0 +1,30 @@
+SimulationType                MolecularDynamics
+NumberOfCycles                5000000
+NumberOfInitializationCycles  1
+NumberOfEquilibrationCycles   50000
+PrintEvery                    100
+
+RandomSeed 1
+
+Ensemble                      NVT
+TimeStep                      0.001 
+
+Forcefield                    local
+CutOff                        14.0
+
+Box 0
+BoxLengths 30.0 30.0 30.0
+ExternalTemperature           300.0
+
+Movies yes
+WriteMoviesEvery 10000
+
+ComputeRDF yes
+WriteRDFEvery 100
+
+ComputeMSD yes
+PrintMSDEvery 5000
+
+Component 0 MoleculeName             methane_TraPPE
+            MoleculeDefinition       local
+            CreateNumberOfMolecules  20 
