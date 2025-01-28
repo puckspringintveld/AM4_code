@@ -10,8 +10,8 @@ W0 = -1 / (2 * len_a**2)
 ks=np.linspace(0,np.pi,10)
 W0s=-np.linspace(np.abs(W0),1000,10)
 test_conv=False
-Vary_ks=False
-Vary_pot=True
+Vary_ks=True
+Vary_pot=False
 
 # Reciprocal space grid
 Ns = np.linspace(-N//2, N//2 - 1, N)
@@ -49,35 +49,35 @@ real_space_wavefunctions = np.fft.ifft(eig_vects,axis=0)
 x = Ns*(len_a)/N
 
 # Plot real-space wavefunctions
-plt.figure(figsize=(8,6))
+plt.figure(figsize=(9,6))
 for i in range(3):
     plt.plot(x, np.abs(real_space_wavefunctions[:, i])**2, label=f"$\lambda_{i+1}$ = {eig_vals[i]:.3f}")
-plt.title(f"Wavefunctions in Real Space - modulus",fontsize=16)
+plt.title(f"Wavefunctions in Real Space",fontsize=16)
 plt.legend(loc='upper left', bbox_to_anchor=(0.75, 1),fontsize=12)
 plt.xlabel(f'$y$',fontsize=16)
-plt.ylabel(f'$\chi(y)$',fontsize=16)
+plt.ylabel(f'$\chi^2(y)$',fontsize=14)
 plt.xlim(-0.5,0.5)
 plt.savefig('Question_4a_real', dpi=300)
 plt.show()
 
-plt.figure(figsize=(8,6))
+plt.figure(figsize=(9,6))
 for i in range(3):
     plt.plot(x, np.real(real_space_wavefunctions[:, i])**2, label=f"$\lambda_{i+1}$ = {eig_vals[i]:.3f}")
 plt.title("Wavefunctions Real Component",fontsize=16)
 plt.legend(loc='upper left', bbox_to_anchor=(0.75, 1),fontsize=12)
 plt.xlabel(f'$y$',fontsize=16)
-plt.ylabel(f'Re $\chi(y)$',fontsize=16)
+plt.ylabel(f'Re $\chi^2(y)$',fontsize=14)
 plt.xlim(-0.5,0.5)
 plt.savefig('Question_4a_real_p', dpi=300)
 plt.show()
   
-plt.figure(figsize=(8,6))  
+plt.figure(figsize=(9,6))  
 for i in range(3):
     plt.plot(x, np.imag(real_space_wavefunctions[:, i])**2, label=f"$\lambda_{i+1}$ = {eig_vals[i]:.3f}")
 plt.title("Wavefunctions Imaginary Component",fontsize=16)
 plt.legend(loc='upper left', bbox_to_anchor=(0.75, 1),fontsize=12)
 plt.xlabel(f'$y$',fontsize=16)
-plt.ylabel(f'Im $\chi(y)$',fontsize=16)
+plt.ylabel(f'Im $\chi^2(y)$',fontsize=14)
 plt.xlim(-0.5,0.5)
 plt.savefig('Question_4a_im_p', dpi=300)
 plt.show()
@@ -162,7 +162,7 @@ if Vary_pot:
             plt.title(f"At $V_0$={int(W)} : Wavefunctions in Real Space",fontsize=16)
             plt.legend(loc='upper left',bbox_to_anchor=(0.75, 1),fontsize=12)
             plt.xlabel(r'$y$',fontsize=16)
-            plt.ylabel(r'$\chi(y)$',fontsize=16)
+            plt.ylabel(r'$\chi^2(y)$',fontsize=14)
             plt.xlim(-0.5,0.5)
             plt.savefig('Question_4b_deep_well', dpi=300)
             plt.show()
@@ -229,7 +229,7 @@ if Vary_ks:
             plt.title(f"At $k=\pi$ : Wavefunctions in Real Space",fontsize=16)
             plt.legend(loc='center left',bbox_to_anchor=(0.875, 0.5),fontsize=12)
             plt.xlabel(r'$y$',fontsize=16)
-            plt.ylabel(r'$\chi(y)$',fontsize=16)
+            plt.ylabel(r'$\chi^2(y)$',fontsize=14)
             plt.xlim(-0.5,0.5)
             plt.savefig('Question_4c_k_is_pi', dpi=300)
             plt.show()
