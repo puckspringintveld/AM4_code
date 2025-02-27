@@ -1,0 +1,11 @@
+6.3998987138230383
+6.4233792759775499 (error)
+6.4225777122804990 (error)
+
+6.3500000000000000
+6.4224170326204781 (error)
+
+#new run
+first ISIF = 2
+then ISIF = 7 , get error -> assume initial LV == optimized
+==>6.3998987138230383 A

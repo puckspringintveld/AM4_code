@@ -1,0 +1,3 @@
+R_min=3.822 A
+eps= 0.01032 eV
+cutoff=12 A
